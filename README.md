@@ -1,2 +1,2 @@
-# Paisagens-Lingu-sticas
+# Paisagens-Linguisticas
 Trabalho de Projeto Integrador do 2B info
