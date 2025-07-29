@@ -1,0 +1,38 @@
+.texto2pa{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.parte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.info2pa {
+    flex: 1;
+}
+
+.imagem2p {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.titulo2pa{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 46px;
+    color: #4c5b5c;
+    margin-bottom: 5px;
+}
+
+.img2pa{
+    height: 700px;
+    width: 729px;
+}
