@@ -1,3 +1,38 @@
+#fundo_titulo_principal {
+    background-image: url("img/Paisagem_linguística.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 200px;
+    color: white;
+}
+
+#titulo_pagina_principal{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 100px;
+}
+
+#subtitulo_pagina_principal {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+#citacao {
+    background-image: url(img/caixacitacao.png);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 12%;
+    align-items: center;
+}
+
+#texto_citacao {
+    font-size: 55px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
 .texto2pa{
     font-family: 'Times New Roman', Times, serif;
     font-size: 24px;
