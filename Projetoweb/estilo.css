@@ -79,3 +79,17 @@
     height: 700px;
     width: 729px;
 }
+.fundorelatos{
+    background-image:url("img/fundomarrom.jpg") ;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100%;
+    display: flex;
+     
+}
+.fundorelatos div{
+    width: auto;
+    height: auto;
+    background: blueviolet;
+}
