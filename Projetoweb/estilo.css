@@ -80,16 +80,44 @@
     width: 729px;
 }
 .fundorelatos{
-    background-image:url("img/fundomarrom.jpg") ;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    background:  #a84309;
     display: flex;
-     
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+    padding: 60px 20px;;
+ 
 }
-.fundorelatos div{
-    width: auto;
-    height: auto;
-    background: blueviolet;
+.titulorelatos{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 46px;
+    color: whitesmoke;
+    margin-bottom: 5px;
+    text-align: center;
+} 
+.container.text-center{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    width: 65%;
+    justify-content: center;
+}
+.comentarios{
+    background-color: whitesmoke;
+    color: black;
+    padding: 70px 70px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+.comentarios::before{
+    content: "❝ "; 
+    font-size: 1.2rem;
+    color: black;  
+}
+.comentarios::after {
+    content: "❞";
+    font-size: 1.4rem;
+    color: black;
 }
