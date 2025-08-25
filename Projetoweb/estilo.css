@@ -1,9 +1,8 @@
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
+/*Título Principal*/
 #fundo_titulo_principal {
     background-image: url("img/Paisagemlinguística.png");
     background-size: cover;
@@ -24,6 +23,7 @@
     letter-spacing: 2px;
 }
 
+/*Citação Principal*/
 #citacao {
     background-image: url(img/caixacitacao.png);
     background-size: cover;
@@ -39,32 +39,38 @@
     font-style: italic;
 }
 
+/*Início do bloco informacional(sobre o projeto e participantes)*/
+.parte {
+    display: flex;
+    min-height: 70vh;
+    align-items: center;
+}
+
+.col {
+    width: 50%;
+    vertical-align: top;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.col img {
+    width: 100%;
+    height: 100%;
+    height: auto;
+    display: block;
+}
+
+.texto {
+    text-align: left;
+    padding: 20px;
+}
+
 .texto2pa {
     font-family: 'Times New Roman', Times, serif;
     font-size: 24px;
     line-height: 1.6;
     text-align: justify;
-    padding: 18;
-}
-
-.parte {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-
-.info2pa {
-    flex: 1;
-}
-
-.imagem2p {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    padding: 0 18px;
 }
 
 .titulo2pa {
@@ -75,133 +81,142 @@
     text-align: center;
 }
 
-.img2pa {
-    height: 700px;
-    width: 729px;
-}
-.fundorelatos{
+/*Relatos*/
+.fundorelatos {
     font-family: 'Times New Roman', Times, serif;
-    background:  #a84309;
+    background: #a84309;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    min-height: 100vh;
-    padding: 60px 20px;;
- 
+    min-height: 60vh;
+    padding: 60px 20px;
+    ;
+
 }
-.titulorelatos{
+
+.titulorelatos {
     font-family: 'Times New Roman', Times, serif;
     font-size: 46px;
     color: whitesmoke;
-    margin-bottom: 5px;
+    margin-top: 0%;
+    margin-bottom: 10%;
     text-align: center;
-} 
-.container.text-center{
+
+}
+
+.container.text-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    width: 65%;
+    gap: 40px;
+    width: 70%;
     justify-content: center;
 }
-.comentarios{
+
+.comentarios {
     background-color: whitesmoke;
     color: black;
     padding: 70px 70px;
     border-radius: 10px;
     font-size: 1.1rem;
 }
-.comentarios::before{
-    content: "❝ "; 
+
+.comentarios::before {
+    content: "❝ ";
     font-size: 1.2rem;
-    color: black;  
+    color: black;
 }
+
 .comentarios::after {
     content: "❞";
     font-size: 1.4rem;
     color: black;
 }
-.fundoexplore{
+
+/*Acesso aos Inforgráficos*/
+
+.fundoexplore {
     background-color: rgb(236, 228, 216);
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: center;
-    min-height: 100vh;
+    justify-content: center;
+    min-height: 60vh;
     padding: 60px 20px;
 }
 
-.tituloexplore{
+.tituloexplore {
     font-family: 'Times New Roman', Times, serif;
     font-size: 46px;
     color: #a84309;
-    margin-bottom: 5px;
+    margin-bottom: 10%;
+    margin-top: 0%;
     text-align: center;
 }
-#caixainfograficos1{
-    background-image: url(botao1.png);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: bold;
-    color: black;
-    padding: 70px 70px;
-    border: 2px solid grey;
-    border-radius: 15%;
-    font-size: 30px;
-    text-decoration: none;
+
+.caixas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 90%;
+    align-content: center
 }
-#caixainfograficos2{
-    background-image: url(botao2.png);
-    color: black;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: bold;
-    padding: 70px 70px;
-    border: 2px solid grey;
-    border-radius: 15%;
-    font-size: 30px;
-    text-decoration: none;
+
+.caixa {
+    width: 300px;
+    height: 180px;
+    border: 3px solid #4c5b5c;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-#caixainfograficos3{
-    background-image: url(botao3.png);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: bold;
-    color: black;
-    padding: 70px 70px;
-    border: 2px solid grey;
-    border-radius: 15%;
-    font-size: 30px;
-    text-decoration: none;
+
+.caixa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-#caixainfograficos4{
-    background-image: url(botao4.png);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: bold;
+
+.caixa .assunto {
+    position: absolute;
     color: black;
-    padding: 70px 70px;
-    border: 2px solid grey;
-    border-radius: 15%;
-    font-size: 30px;
-    text-decoration: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#caixainfograficos5{
-    background-image: url(botao5.png);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: bold;
-    color: black;
-    padding: 70px 70px;
-    border: 2px solid grey;
-    border-radius: 15%;
-    font-size: 30px;
-    text-decoration: none;
+
+
+/*Rodapé*/
+
+.fundorodape {
+    background: #a84309;
+    height: 26%;
+    padding: 0 20px;
+    position: relative;
 }
-#caixainfograficos6{
-    background-image: url(botao6.png);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: bold;
-    color: black;
-    padding: 70px 70px;
-    border: 2px solid grey;
-    border-radius: 15%;
-    font-size: 30px;
-    text-decoration: none;
+
+.inf-gerais p {
+    margin-top: 2px;
+    margin-bottom: 3px;
+    color: white;
+}
+
+.logoifmg {
+    margin: 0;
+    left: 0;
+}
+
+.fundorodape hr {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 5px 0;
 }
