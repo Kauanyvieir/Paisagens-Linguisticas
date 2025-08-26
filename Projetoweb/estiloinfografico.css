@@ -110,3 +110,7 @@ a:hover {
     background-color: #c65c1a;
     /* Cor de fundo ao passar o mouse */
 }
+
+.botao-vercomentario {
+    color: #252f3d;
+}
