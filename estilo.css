@@ -11,20 +11,20 @@ body {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 90px;
+    padding: 15vw;
     color: white;
 }
 
 #titulo_pagina_principal {
     font-family: "Playfair Display", serif;
-    font-size: 120px;
+    font-size: 5vw;
     margin-bottom: 10px;
 }
 
 #subtitulo_pagina_principal {
     font-family: "Poppins", sans-serif;
     margin-top: 0;
-    font-size: 27px;
+    font-size: 2vw;
     letter-spacing: 2px;
 }
 
@@ -34,28 +34,30 @@ body {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 10%;
+    padding: 13vw;
     align-items: center;
 }
 
 #texto_citacao {
-    font-size: 50px;
+    font-size: 3vw;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
 }
 
 /*Início do bloco informacional(sobre o projeto e participantes)*/
 .parte {
+    border: 1px solid red;
     display: flex;
     min-height: 70vh;
     align-items: center;
+    margin: 0;
+    padding:  0;
 }
 
 .col {
-    width: 50%;
-    vertical-align: top;
-    font-size: 16px;
-    box-sizing: border-box;
+    border: 1px solid red;
+    width: 50vw;
+    margin: 0;
 }
 
 .col img {
@@ -67,7 +69,7 @@ body {
 
 .texto {
     text-align: left;
-    padding: 20px;
+    padding: 2vw;
 }
 
 .titulo2pa {
