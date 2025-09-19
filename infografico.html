@@ -1,7 +1,9 @@
 <html>
 
 <head>
-    <title>Infografico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+        integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="estiloinfografico.css">
 </head>
 
@@ -19,7 +21,40 @@
             (registros poéticos). os registros foram feitos na cidade de ribeirão das neves.</p>
         <p class="hastag">#infográficos #Info1A #Monolinguismo</p>
         <p class="botao-insiracomentario">Insira seu comentário</p>
-        <p class="botao-vercomentario">Ver outros comentários</p>
+        <details>
+            <summary class="botao-vercomentario">Ver outros comentários</summary>
+            <div class="fundocomentarios">
+                <div class="titulocoment">
+                    <a href="">SAIR</a>
+                    <h2 class="tituloexplore">Comentários</h2>
+                    <hr>
+                </div>
+                <div class="comments">
+                    <div class="comment-card">
+                        <div class="comment-user">Usuário 1</div>
+                        <div class="comment-text">Comentário do usuário 1 aqui.</div>
+                    </div>
+
+                    <div class="comment-card">
+                        <div class="comment-user">Usuário 2</div>
+                        <div class="comment-text">Comentário do usuário 2 aqui.</div>
+                    </div>
+
+                    <div class="comment-card">
+                        <div class="comment-user">Usuário 3</div>
+                        <div class="comment-text">Comentário do usuário 3 aqui.</div>
+                    </div>
+                </div>
+                <div class="add-comment">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder=" Adicione um comentário">
+                        <button class="btn" type="button">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </details>
     </div>
     <hr>
     <a href="index.html">Voltar para à página principal</a>
