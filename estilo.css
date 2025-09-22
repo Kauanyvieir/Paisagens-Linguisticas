@@ -201,7 +201,12 @@ body {
 }
 
 
+
 /*Login*/
+.fundo-login {
+    background-color: #a84309;
+}
+
 .bloco-branco-login {
     background-color: white;
 }
