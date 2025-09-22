@@ -104,8 +104,7 @@ body {
     min-height: 11vw;
     padding: 1.5vw 2vw;
     border-radius: 1vw;
-    font-size: 1.1rem;
-    font-size: 1vw;
+    font-size: 1.2vw;
     line-height: 1.4vw;
     text-align: left;
     font-family: 'Times New Roman', Times, serif;
@@ -117,7 +116,6 @@ body {
     font-size: 1rem;
     color: black;
 }
-
 
 
 /*Acesso aos Inforgráficos*/
@@ -200,4 +198,31 @@ body {
 
 .titulo-rodape {
     font-size: 1.5vw;
+}
+
+
+/*Login*/
+.bloco-branco-login {
+    background-color: white;
+}
+
+.textos-login {
+    color: #a84309;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.link-login {
+    color: #a84309;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.link-login:hover {
+    color: #572406;
+}
+
+#botao-login {
+    background-color: #a84309;
+    color: white;
+    width: 40%;
 }
