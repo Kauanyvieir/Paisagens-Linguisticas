@@ -5,6 +5,7 @@
         integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="estiloinfografico.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
 
     <div class="container">
         <h2 class="titulo"><i>Matriz indígena- INF 1B</i></h2>
-        <img src="img/matrizindigena.png" class="img-fluid">
+        <a href="#img1" class="img-zoom"><img src="img/matrizindigena.png" class="img-fluid"></a>
         <p class="hastag">#infográficos #Info1A #Monolinguismo</p>
         <a href="login.html" class="botao-insiracomentario">Insira seu comentário</a>
         <details>
@@ -59,6 +60,19 @@
     </div>
     <hr>
     <a href="index.html" class="botaoprincipal">Voltar para à página principal</a>
+
+    <!-- Lightbox anchor -->
+    <a href="#" class="lightbox" id="img1">
+        <img src="img/matrizindigena.png" alt="Matriz Indígena">
+    </a>
+
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                if (location.hash) location.hash = '';
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -5,6 +5,8 @@
         integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="estiloinfografico.css">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
 
     <div class="container">
         <h2 class="titulo"><i>TRANSLINGUISMO- INF 1A</i></h2>
-        <img src="img/translinguismo.png" class="img-fluid">
+        <a href="#img1"><img src="img/translinguismo.png" class="img-fluid"></a>
         <p>Nossa análise traz elementos com mistura da língua inglesa com português e também uma mistura do português
             com francês</p>
         <p class="hastag">#infográficos #Info1A #Translinguismo</p>
@@ -60,7 +62,7 @@
     <hr>
     <div class="container">
         <h2 class="titulo"><i>TRANSLINGUISMO- INF 1B</i></h2>
-        <img src="img/translinguismo1.png" class="img-fluid">
+        <a href="#img2" class="img-zoom"><img src="img/translinguismo1.png" class="img-fluid"></a>
         <p>Translinguismo é quando as pessoas usam várias línguas juntas, sem separar, para se comunicar melhor. É uma
             mistura natural de palavras e expressões de línguas diferentes no dia a dia.</p>
         <p class="hastag">#infográficos #Info1B #Translinguismo</p>
@@ -102,6 +104,22 @@
     </div>
     <hr>
     <a href="index.html" class="botaoprincipal">Voltar para à página principal</a>
+
+    <!-- Lightbox anchors -->
+    <a href="#" class="lightbox" id="img1">
+        <img src="img/translinguismo.png" alt="Translinguismo INF 1A">
+    </a>
+    <a href="#" class="lightbox" id="img2">
+        <img src="img/translinguismo1.png" alt="Translinguismo INF 1B">
+    </a>
+
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                if (location.hash) location.hash = '';
+            }
+        });
+    </script>
 </body>
 
 </html>

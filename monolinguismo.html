@@ -5,6 +5,7 @@
         integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="estiloinfografico.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
     </div>
     <div class="container">
         <h2 class="titulo"><i>MONOLINGUISMO - INF 1A</i></h2>
-        <img src="img/monolinguismo_INF1A.pdf (800 x 1000 px).png" class="img-fluid">
+        <a href="#img1" class="img-zoom"><img src="img/monolinguismo_INF1A.pdf (800 x 1000 px).png" class="img-fluid"></a>
         <p>Nosso trabalho teve foco em registros monolíngues que colocam em evidências a diversidade da língua
             portuguesa utilizando diferentes variantes, gírias ou coloquialismos, trocadilhos e usos criativos
             (registros poéticos). os registros foram feitos na cidade de ribeirão das neves.</p>
@@ -60,6 +61,19 @@
     </div>
     <hr>
     <a href="index.html" class="botaoprincipal">Voltar para à página principal</a>
+
+    <!-- Lightbox anchor -->
+    <a href="#" class="lightbox" id="img1">
+        <img src="img/monolinguismo_INF1A.pdf (800 x 1000 px).png" alt="Monolinguismo">
+    </a>
+
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                if (location.hash) location.hash = '';
+            }
+        });
+    </script>
 </body>
 
 </html>

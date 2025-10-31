@@ -220,3 +220,27 @@ summary::before {
 .add-comment .btn:hover {
     background-color: #6A2F1B;
 }
+.lightbox{
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  padding: 1rem;
+  background: rgba(57, 20, 4, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* imagem exibida no lightbox */
+.lightbox img{
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.lightbox span{ display: block; }
+
+.lightbox:target {
+  display: flex;
+}
