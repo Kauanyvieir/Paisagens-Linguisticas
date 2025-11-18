@@ -1,9 +1,33 @@
 <?php 
-    // if (isset($_POST['usuario']) && isset($_POST['senha'])) {
-    //     $usuario = $_POST['usuario'];
-    //     $senha = $_POST['senha'];
-    // }
+$result = "";
+
+if (isset($_POST['usuario']) && isset($_POST['senha']) && $_POST['usuario'] !== "" && $_POST['senha'] !== "") {
+    $usuario = trim($_POST['usuario']);
+    $senha = trim($_POST['senha']);
+
+    $linhas = file('banco_de_dados/usuarios.txt');
+    $usuarioExiste = false;
+
+    foreach ($linhas as $linha) {
+        if (trim($linha) === $usuario) {
+            $usuarioExiste = true;
+            break;
+        }
+    }
+
+    if ($usuarioExiste) {
+        $result = "Usuário já existe! Tente novamente.";
+    } else {
+        file_put_contents('banco_de_dados/usuarios.txt', "$usuario\n", FILE_APPEND);
+        file_put_contents('banco_de_dados/usuarios.txt', "$senha\n", FILE_APPEND);
+
+        $result = "Feito com sucesso!";
+        header("Location: index.html");
+        exit;
+    }
+} 
 ?>
+
 
 <html>
 
@@ -35,27 +59,25 @@
             </div>
 
             <h2 class="textos-login mb-2"><b>Login</b></h2>
-            <h1><?php echo htmlspecialchars($_POST['usuario']) ?></h1>
-            <h1><?php echo (int) $_POST['senha'] ?></h1>
 
             <div class="row d-flex justify-content-center">
                 <div class="col">
+                    <form action="login.php" method="post">
                         <div class="input-group mb-3">
                             <i class="bi bi-person d-flex align-items-center mx-3"></i>
-                            <form action="login.php" method="post">
-                                <input name="usuario" type="text" class="form-control" placeholder="Usuário">
-                            </form>
+                            <input name="usuario" type="text" class="form-control" placeholder="Usuário">
                         </div>
+
+                        <p><?php echo $result; ?></p>
 
                         <div class="input-group mb-3">
                             <i class="bi bi-lock d-flex align-items-center mx-3"></i>
-                            <form action="login.php" method="post">                            
-                                <input name="senha" type="password" class="form-control" placeholder="Senha">
-                            </form>
+                            <input name="senha" type="password" class="form-control" placeholder="Senha">
                         </div>
 
-                    <a class="nav-link mx-5 mb-5" href="">Esqueci minha senha</a>
-                    <button class="btn mb-3 rounded-3" id="botao-login" type="button">Login</button>
+                        <a class="nav-link mx-5 mb-5" href="">Esqueci minha senha</a>
+                        <button class="btn mb-3 rounded-3" id="botao-login" type="submit">Login</button>
+                    </form>
                 </div>
             </div>
         </div>
