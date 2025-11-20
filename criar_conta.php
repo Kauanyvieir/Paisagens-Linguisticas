@@ -8,29 +8,31 @@ $_SESSION['pag_atual'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'
 
 
 $result = "";
+
 if (isset($_POST['usuario']) && isset($_POST['senha']) && $_POST['usuario'] !== "" && $_POST['senha'] !== "") {
     $usuario = trim($_POST['usuario']);
     $senha = trim($_POST['senha']);
 
     $linhas = file('banco_de_dados/usuarios.txt');
-    $login = false;
-    for ($i=0; $i < count($linhas); $i+=2) {
-       $usuario_bd = trim($linhas[$i]);
-       $senha_bd = trim($linhas[$i+1]);
+    $usuarioExiste = false;
 
-       if ($usuario === $usuario_bd && $senha === $senha_bd) {
-            $login = true;
+        $user_existe = false;
+    for ($i=0; $i < count($linhas); $i+=2) {
+        if (trim($linhas[$i]) === $usuario) {
+            $user_existe = true;
             break;
         }
     }
 
-    if ($login) {
-        $_SESSION['usuario'] = $usuario;
-
-        header("Location: index.html");
-        exit;
+    if ($user_existe) {
+        $result = "Usuário já existe! Tente novamente ou faça login";
     } else {
-        $result = "Usuário ou senha incorretos, tente novamente";
+        file_put_contents('banco_de_dados/usuarios.txt', "$usuario\n", FILE_APPEND);
+        file_put_contents('banco_de_dados/usuarios.txt', "$senha\n", FILE_APPEND);
+
+        $result = "Feito com sucesso!";
+        header("Location: login.php");
+        exit;
     }
 } 
 ?>
@@ -39,7 +41,7 @@ if (isset($_POST['usuario']) && isset($_POST['senha']) && $_POST['usuario'] !== 
 <html>
 
 <head>
-    <title>Login</title>
+    <title>Criação de Conta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.8/css/bootstrap.min.css"
         integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -65,11 +67,11 @@ if (isset($_POST['usuario']) && isset($_POST['senha']) && $_POST['usuario'] !== 
                 </nav>
             </div>
 
-            <h2 class="textos-login mb-2"><b>Login</b></h2>
+            <h2 class="textos-login mb-2"><b>Criar Conta</b></h2>
 
             <div class="row d-flex justify-content-center">
                 <div class="col">
-                    <form action="login.php" method="post">
+                    <form action="criar_conta.php" method="post">
                         <div class="input-group mb-3">
                             <i class="bi bi-person d-flex align-items-center mx-3"></i>
                             <input name="usuario" type="text" class="form-control" placeholder="Usuário">
@@ -82,7 +84,7 @@ if (isset($_POST['usuario']) && isset($_POST['senha']) && $_POST['usuario'] !== 
                             <input name="senha" type="password" class="form-control" placeholder="Senha">
                         </div>
 
-                        <a class="nav-link mx-5 mb-5" href="">Esqueci minha senha</a>
+                        <a class="nav-link mx-5 mb-5" href="login.php">Já tenho uma conta</a>
                         <button class="btn mb-3 rounded-3" id="botao-login" type="submit">Login</button>
                     </form>
                 </div>
