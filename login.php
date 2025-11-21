@@ -1,11 +1,14 @@
 <?php 
 session_start();
-$ultima_pagina = '';
-if (isset($_SESSION['pag_atual'])) {
-    $ultima_pagina = $_SESSION['pag_atual'];
-}
+$ignoradas = ['login.php', 'criar_conta.php'];
+$pagina_atual = basename($_SERVER['PHP_SELF']);
+if (!in_array($pagina_atual, $ignoradas)) {
+    if (isset($_SESSION['pag_atual'])) {
+        $_SESSION['pag_anterior'] = $_SESSION['pag_atual'];
+    }
 $_SESSION['pag_atual'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
+}
+$ultima_pagina = $_SESSION['pag_anterior'];
 
 $result = "";
 if (isset($_POST['usuario']) && isset($_POST['senha']) && $_POST['usuario'] !== "" && $_POST['senha'] !== "") {
