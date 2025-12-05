@@ -8,7 +8,7 @@ if (!in_array($pagina_atual, $ignoradas)) {
     }
 $_SESSION['pag_atual'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 }
-$ultima_pagina = $_SESSION['pag_anterior'];
+$ultima_pagina = $_SESSION['pag_anterior'] ?? null;
 
 
 $result = "";

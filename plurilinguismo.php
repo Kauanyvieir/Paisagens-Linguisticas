@@ -5,6 +5,10 @@ if (isset($_SESSION['pag_atual'])) {
     $ultima_pagina = $_SESSION['pag_atual'];
 }
 $_SESSION['pag_atual'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+include 'comentarios.php';
+
+
 ?>
 
 <html>
@@ -32,44 +36,10 @@ $_SESSION['pag_atual'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'
         <h2 class="titulo"><i>PLURILINGUISMO- INF 1A</i></h2>
         <a href="#img1"><img src="img/plurilinguismo.png" class="img-fluid"></a>
         <p class="hastag">#infográficos#Info1A#Plurilinguismo</p>
-        <a href="criar_conta.php" class="botao-insiracomentario">Insira seu comentário</a>
-        <details>
-            <summary class="botao-vercomentario">Ver outros comentários</summary>
-            <div class="fundocomentarios">
-                <div class="titulocoment">
-                    <a href="" class="botaoprincipal">SAIR</a>
-                    <h2 class="tituloexplore">Comentários</h2>
-                    <hr>
-                </div>
-                <div class="comments">
-                    <div class="comment-card">
-                        <div class="comment-user">Usuário 1</div>
-                        <div class="comment-text">Comentário do usuário 1 aqui.</div>
-                    </div>
-
-                    <div class="comment-card">
-                        <div class="comment-user">Usuário 2</div>
-                        <div class="comment-text">Comentário do usuário 2 aqui.</div>
-                    </div>
-
-                    <div class="comment-card">
-                        <div class="comment-user">Usuário 3</div>
-                        <div class="comment-text">Comentário do usuário 3 aqui.</div>
-                    </div>
-                </div>
-                <div class="add-comment">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder=" Adicione um comentário">
-                        <button class="btn" type="button">
-                            <i class="bi bi-send"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </details>
+        <?php mostrarComentarios("tema3", "post1")?>
     </div>
     <hr>
-    <a href="index.html" class="botaoprincipal">Voltar para à página principal</a>
+    <a href="index.html" class="botaovolta">Voltar para à página principal</a>
 
     <!-- Lightbox anchor -->
     <a href="#" class="lightbox" id="img1">

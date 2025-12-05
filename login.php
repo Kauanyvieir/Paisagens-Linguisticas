@@ -8,7 +8,7 @@ if (!in_array($pagina_atual, $ignoradas)) {
     }
 $_SESSION['pag_atual'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 }
-$ultima_pagina = $_SESSION['pag_anterior'];
+$ultima_pagina = $_SESSION['pag_anterior'] ?? null;
 
 $result = "";
 if (isset($_POST['usuario']) && isset($_POST['senha']) && $_POST['usuario'] !== "" && $_POST['senha'] !== "") {
@@ -19,6 +19,9 @@ if (isset($_POST['usuario']) && isset($_POST['senha']) && $_POST['usuario'] !== 
     $login = false;
     for ($i=0; $i < count($linhas); $i+=2) {
        $usuario_bd = trim($linhas[$i]);
+       if (!isset($linhas[$i + 1])) {
+        continue;
+        }
        $senha_bd = trim($linhas[$i+1]);
 
        if ($usuario === $usuario_bd && $senha === $senha_bd) {
